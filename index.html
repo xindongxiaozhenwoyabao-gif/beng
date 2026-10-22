@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+                 initial-scale=1.0,
+                 maximum-scale=1.0,
+                 user-scalable=no"
+    >
+
+    <title>活动页面</title>
+
+    <style>
+
+        /* ==============================
+           基础设置
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            background: #0b4f9d;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+
+        /* ==============================
+           页面
+           
+           原图片比例：484 × 1280
+        ============================== */
+
+        .page {
+            position: relative;
+
+            width: min(100vw, 484px);
+
+            aspect-ratio: 484 / 1280;
+
+            /*
+             * 这里读取仓库里的背景图片
+             *
+             * index.html 和 photo.jpg
+             * 放在同一个文件夹
+             */
+            background-image: url("./photo_2026-10-21_17-59-40(3).jpg");
+
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            overflow: hidden;
+        }
+
+
+        /* ==============================
+           「立即领取」点击区域
+           
+           这个区域是透明的，
+           所以不会改变原图片。
+        ============================== */
+
+        .claim-link {
+            position: absolute;
+
+            /*
+             * 「立即领取」按钮的位置
+             */
+            left: 17.6%;
+            top: 73.05%;
+
+            /*
+             * 点击区域大小
+             */
+            width: 64.9%;
+            height: 7%;
+
+            display: block;
+
+            /*
+             * 透明
+             */
+            background: transparent;
+
+            border: none;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            /*
+             * 手机点击时不出现高亮
+             */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        .claim-link:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         活动页面
+    ============================== -->
+
+    <div class="page">
+
+        <!--
+            原图片中的「立即领取」
+            现在可以点击。
+
+            点击后跳转 LINE。
+        -->
+
+        <a
+            class="claim-link"
+            href="https://lin.ee/SMbdr1S"
+            aria-label="立即领取"
+        ></a>
+
+    </div>
+
+
+</body>
+</html>
